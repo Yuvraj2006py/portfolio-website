@@ -3,11 +3,12 @@ import { projects } from "@/data/projects";
 import { ProjectDetail } from "@/components/ProjectDetail";
 
 interface Params {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function ProjectDetailPage({ params }: Params) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetailPage({ params }: Params) {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();

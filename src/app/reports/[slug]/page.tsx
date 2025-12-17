@@ -3,11 +3,12 @@ import { reports } from "@/data/reports";
 import { ReportDetail } from "@/components/ReportDetail";
 
 interface Params {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function ReportDetailPage({ params }: Params) {
-  const report = reports.find((r) => r.slug === params.slug);
+export default async function ReportDetailPage({ params }: Params) {
+  const resolvedParams = await params;
+  const report = reports.find((r) => r.slug === resolvedParams.slug);
 
   if (!report) {
     notFound();

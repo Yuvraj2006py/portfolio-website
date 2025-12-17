@@ -3,11 +3,12 @@ import { experiences } from "@/data/experience";
 import { ExperienceDetail } from "@/components/ExperienceDetail";
 
 interface Params {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ExperienceDetailPage({ params }: Params) {
-  const experience = experiences.find((exp) => exp.id === params.id);
+export default async function ExperienceDetailPage({ params }: Params) {
+  const resolvedParams = await params;
+  const experience = experiences.find((exp) => exp.id === resolvedParams.id);
 
   if (!experience) {
     notFound();
