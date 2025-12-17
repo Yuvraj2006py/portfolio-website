@@ -98,7 +98,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "western-quantitative-co-president",
-    role: "Co-President & Quantitative Developer",
+    role: "Quantitative Developer",
     organization: "Western Quantitative",
     location: "London, ON",
     startDate: "September 2025",
@@ -117,7 +117,7 @@ export const experiences: Experience[] = [
       {
         heading: "Leadership & Organization",
         body:
-          "As Co-President of Western Quantitative, I lead a 20-member research division focused on quantitative finance, algorithmic trading, and market analysis. The organization develops trading strategies, builds quantitative models, and conducts research on market microstructure and high-frequency trading."
+          "As a Quantitative Developer at Western Quantitative, I contribute to a 20-member research division focused on quantitative finance, algorithmic trading, and market analysis. The organization develops trading strategies, builds quantitative models, and conducts research on market microstructure and high-frequency trading."
       },
       {
         heading: "Research & Development",
